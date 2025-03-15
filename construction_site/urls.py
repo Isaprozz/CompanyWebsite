@@ -18,6 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
 from contact import views  # Import views from your 'contact' app
+from django.contrib.sitemaps.views import sitemap
+from contact.sitemaps import StaticViewSitemap
+
+
+sitemaps = {
+      'static': StaticViewSitemap(),  # Static pages only
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,8 +33,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),  
     path('services/', views.services, name='services'),
     path('contact/', views.contact, name='contact'),
-
-    
-        
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
