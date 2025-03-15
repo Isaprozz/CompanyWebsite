@@ -19,9 +19,9 @@ from django.urls import path
 from django.urls import include, path
 from contact import views  # Import views from your 'contact' app
 from django.views.generic import TemplateView
-from django.views.generic.base import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
 
 
 urlpatterns = [
@@ -31,6 +31,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),  
     path('services/', views.services, name='services'),
     path('contact/', views.contact, name='contact'),
-    path('sitemap.xml', RedirectView.as_view(url='/static/sitemap.xml', permanent=True)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('sitemap.xml', serve, {'document_root': settings.STATIC_ROOT, 'path': 'sitemap.xml'}),
+] 
 
