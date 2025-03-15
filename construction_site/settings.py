@@ -30,9 +30,9 @@ SECRET_KEY = 'django-insecure-e!t+2qohy(m@z2$x$f+b2wz37q@w^8k40lh(c796c#xrxnl$$2
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['fourkmenergyservicesltd-lvr.onrender.com']
+#ALLOWED_HOSTS = ['fourkmenergyservicesltd-lvr.onrender.com']
 
-#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -144,3 +144,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = '4kmenergyserviceslimited@gmail.com'
 EMAIL_HOST_PASSWORD = 'your-email-password'
+
